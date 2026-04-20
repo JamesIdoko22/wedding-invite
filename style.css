@@ -352,39 +352,160 @@ html, body {
     }
 }
 
-<!-- Envelope Screen -->
-<div class="screen envelope-screen" id="envelopeScreen">
+/* ===============================
+   PREMIUM ENVELOPE EFFECTS
+================================= */
 
-    <div class="hero-wrapper">
+.hero-wrapper {
+    text-align: center;
+    animation: fadeInUp 1.2s ease;
+    position: relative;
+}
 
-        <p class="hero-subtitle">You're cordially invited</p>
+.hero-subtitle {
+    font-family: 'Great Vibes', cursive;
+    font-size: 42px;
+    color: var(--champagne-light);
+    margin-bottom: 40px;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
 
-        <div class="lux-envelope" id="luxEnvelope">
+/* Envelope */
+.lux-envelope {
+    position: relative;
+    width: 420px;
+    height: 260px;
+    margin: 0 auto 40px;
+    perspective: 1200px;
+    filter: drop-shadow(0 30px 60px rgba(0,0,0,0.6));
+}
 
-            <div class="light-sweep"></div>
+.lux-envelope-body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--champagne), var(--champagne-light));
+    border-radius: 6px;
+    overflow: hidden;
+}
 
-            <div class="lux-envelope-body"></div>
+/* Gold shimmer overlay */
+.lux-envelope-body::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent 30%,
+        rgba(255,255,255,0.4),
+        transparent 70%
+    );
+    animation: shimmer 4s infinite linear;
+}
 
-            <div class="lux-envelope-flap" id="envelopeFlap"></div>
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
 
-            <div class="lux-seal">
-                <span>N<br>&<br>J</span>
-            </div>
+/* Light sweep */
+.light-sweep {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        100deg,
+        transparent 40%,
+        rgba(255,255,255,0.3),
+        transparent 60%
+    );
+    animation: sweep 6s infinite linear;
+    z-index: 5;
+}
 
-        </div>
+@keyframes sweep {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
 
-        <button class="open-btn" onclick="openEnvelope()">
-            Open Invitation
-        </button>
+/* Flap */
+.lux-envelope-flap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--champagne-light), var(--champagne));
+    clip-path: polygon(0 0, 50% 55%, 100% 0);
+    transform-origin: top;
+    transition: transform 1.2s cubic-bezier(0.65, 0, 0.35, 1);
+    z-index: 6;
+    border-radius: 6px 6px 0 0;
+}
 
-    </div>
+/* Opening animation */
+.lux-envelope.open .lux-envelope-flap {
+    transform: rotateX(180deg);
+}
 
-    <!-- Sparkle Container -->
-    <div id="sparkleContainer"></div>
+/* Wax Seal */
+.lux-seal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85px;
+    height: 85px;
+    background: radial-gradient(circle, var(--burgundy-dark), var(--burgundy));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--champagne-light);
+    font-family: 'Cinzel', serif;
+    border: 3px solid var(--champagne);
+    z-index: 7;
+    box-shadow:
+        0 6px 15px rgba(0,0,0,0.5),
+        inset 0 3px 6px rgba(255,255,255,0.2);
+}
 
-    <!-- Background Music -->
-    <audio id="bgMusic" loop>
-        <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5c7c59c7e4.mp3?filename=wedding-romantic-ambient-110397.mp3" type="audio/mpeg">
-    </audio>
+/* Button */
+.open-btn {
+    padding: 18px 60px;
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    border: 2px solid var(--champagne);
+    background: transparent;
+    color: var(--champagne-light);
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
 
-</div>
+.open-btn:hover {
+    background: var(--champagne);
+    color: var(--burgundy-dark);
+    transform: translateY(-4px);
+}
+
+/* Sparkles */
+#sparkleContainer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.sparkle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--champagne-light);
+    border-radius: 50%;
+    animation: sparkleAnim 1s ease forwards;
+}
+
+@keyframes sparkleAnim {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: translateY(-80px) scale(0); }
+}
