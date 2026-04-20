@@ -8,34 +8,26 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<script>
-document.addEventListener("click", function() {
-    console.log("Page is receiving clicks ✅");
-});
-</script>
+
 <body>
 
-<div class="lux-envelope" id="luxEnvelope">
+<!-- Envelope Screen -->
+<div class="screen envelope-screen" id="envelopeScreen">
+    <div class="hero-wrapper">
 
-    <div class="light-sweep"></div>
+        <p class="hero-subtitle">You're cordially invited</p>
 
-    <div class="lux-envelope-body"></div>
+        <div class="lux-envelope" id="luxEnvelope">
+            <div class="lux-envelope-body"></div>
+            <div class="lux-envelope-flap"></div>
+            <div class="lux-seal">N<br>&<br>J</div>
+        </div>
 
-    <div class="lux-letter" id="luxLetter">
-        <h2>Nenye & James</h2>
+        <button class="open-btn" id="openBtn">
+            Open Invitation
+        </button>
+
     </div>
-
-    <div class="lux-envelope" id="luxEnvelope" ></div>
-
-    <div class="lux-seal">
-        <span>N<br>&<br>J</span>
-    </div>
-
-</div>
-    <!-- Sparkle Container -->
-    <div id="sparkleContainer"></div>
-
-
 </div>
 
 <!-- Invitation Screen -->
@@ -57,7 +49,6 @@ document.addEventListener("click", function() {
             at the celebration of their marriage
         </p>
 
-        <!-- DATE SECTION -->
         <div class="date-section">
             <p class="day">Saturday</p>
 
@@ -72,7 +63,6 @@ document.addEventListener("click", function() {
 
         <div class="divider"></div>
 
-        <!-- VENUE -->
         <div class="venue">
             <p class="venue-name">Space and Function</p>
             <p class="venue-address">Wuse II, Abuja</p>
@@ -80,19 +70,3 @@ document.addEventListener("click", function() {
 
         <div class="rsvp-section">
             <p>Reception to follow</p>
-            <p class="rsvp">Kindly RSVP by 1st August 2026</p>
-            <div class="countdown-wrapper">
-    <p id="countdown">Loading...</p>
-</div>
-        </div>
-
-        <div class="ornament bottom">❦</div>
-
-        <button class="close-btn" onclick="closeInvite()">Close Invitation</button>
-
-    </div>
-</div>
-
-<script src="script.js"></script>
-</body>
-</html>
