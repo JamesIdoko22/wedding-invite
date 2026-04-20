@@ -519,3 +519,47 @@ html, body {
     from { transform: scale(1); }
     to { transform: scale(1.05); }
 }
+
+.lux-letter {
+    position: absolute;
+    width: 85%;
+    height: 80%;
+    background: linear-gradient(to bottom, #fff, var(--pale-pink-soft));
+    top: 10%;
+    left: 7.5%;
+    border-radius: 4px;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(0);
+    transition: transform 1.4s cubic-bezier(0.65,0,0.35,1);
+}
+
+.lux-letter h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 42px;
+    color: var(--burgundy);
+}
+
+/* Slide out effect */
+.lux-envelope.open .lux-letter {
+    transform: translateY(-140%);
+}
+
+.cursor-dot {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, var(--champagne-light), transparent);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: fadeOut 1s linear forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
