@@ -18,13 +18,18 @@
 
         <p class="hero-subtitle">You're cordially invited</p>
 
-        <div class="lux-envelope">
+        <div class="lux-envelope" id="luxEnvelope">
+
+            <div class="light-sweep"></div>
+
             <div class="lux-envelope-body"></div>
-            <div class="lux-envelope-flap"></div>
+
+            <div class="lux-envelope-flap" id="envelopeFlap"></div>
 
             <div class="lux-seal">
                 <span>N<br>&<br>J</span>
             </div>
+
         </div>
 
         <button class="open-btn" onclick="openEnvelope()">
@@ -32,6 +37,14 @@
         </button>
 
     </div>
+
+    <!-- Sparkle Container -->
+    <div id="sparkleContainer"></div>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5c7c59c7e4.mp3?filename=wedding-romantic-ambient-110397.mp3" type="audio/mpeg">
+    </audio>
 
 </div>
 
