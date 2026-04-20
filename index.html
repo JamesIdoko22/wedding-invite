@@ -1,72 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nenye & James • Wedding Invitation</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
 <!-- Envelope Screen -->
 <div class="screen envelope-screen" id="envelopeScreen">
+
     <div class="hero-wrapper">
 
         <p class="hero-subtitle">You're cordially invited</p>
 
         <div class="lux-envelope" id="luxEnvelope">
+
+            <div class="light-sweep"></div>
+
             <div class="lux-envelope-body"></div>
-            <div class="lux-envelope-flap"></div>
-            <div class="lux-seal">N<br>&<br>J</div>
+
+            <div class="lux-envelope-flap" id="envelopeFlap"></div>
+
+            <div class="lux-seal">
+                <span>N<br>&<br>J</span>
+            </div>
+
         </div>
 
-        <button class="open-btn" id="openBtn">
+        <button class="open-btn" onclick="openEnvelope()">
             Open Invitation
         </button>
 
     </div>
+
+    <!-- Sparkle Container -->
+    <div id="sparkleContainer"></div>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5c7c59c7e4.mp3?filename=wedding-romantic-ambient-110397.mp3" type="audio/mpeg">
+    </audio>
+
 </div>
-
-<!-- Invitation Screen -->
-<div class="screen invite-screen" id="inviteScreen">
-    <div class="invite-card">
-
-        <div class="ornament">❦</div>
-
-        <p class="overline">Together with their families</p>
-
-        <h1 class="names">
-            Nenye <span>&</span> James
-        </h1>
-
-        <div class="divider"></div>
-
-        <p class="request">
-            request the honour of your presence<br>
-            at the celebration of their marriage
-        </p>
-
-        <div class="date-section">
-            <p class="day">Saturday</p>
-
-            <div class="date-row">
-                <span class="month">September</span>
-                <span class="date-number">5</span>
-                <span class="year">2026</span>
-            </div>
-
-            <p class="time">at two o'clock in the afternoon</p>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="venue">
-            <p class="venue-name">Space and Function</p>
-            <p class="venue-address">Wuse II, Abuja</p>
-        </div>
-
-        <div class="rsvp-section">
-            <p>Reception to follow</p>
