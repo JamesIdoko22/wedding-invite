@@ -13,20 +13,26 @@
 
 <!-- Envelope Screen -->
 <div class="screen envelope-screen" id="envelopeScreen">
-    <div class="envelope-container">
-        <p class="top-text">You're cordially invited</p>
 
-        <div class="envelope" id="envelope" onclick="openEnvelope()">
-            <div class="envelope-back"></div>
-            <div class="envelope-letter">
-                <div class="seal">N<br>&<br>J</div>
+    <div class="hero-wrapper">
+
+        <p class="hero-subtitle">You're cordially invited</p>
+
+        <div class="lux-envelope">
+            <div class="lux-envelope-body"></div>
+            <div class="lux-envelope-flap"></div>
+
+            <div class="lux-seal">
+                <span>N<br>&<br>J</span>
             </div>
-            <div class="envelope-front"></div>
-            <div class="envelope-flap"></div>
         </div>
 
-        <p class="click-hint">✨ Tap envelope to open ✨</p>
+        <button class="open-btn" onclick="openEnvelope()">
+            Open Invitation
+        </button>
+
     </div>
+
 </div>
 
 <!-- Invitation Screen -->
