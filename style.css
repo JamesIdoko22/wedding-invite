@@ -1,99 +1,99 @@
-body {
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to bottom right, #800020, #f8d7da);
-    font-family: 'Playfair Display', serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aarav & Meera • Wedding Invitation</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
 
-/* Container */
-.container {
-    text-align: center;
-}
+<!-- Floating Petals -->
+<div class="petals">
+    <span class="petal"></span>
+    <span class="petal"></span>
+    <span class="petal"></span>
+    <span class="petal"></span>
+    <span class="petal"></span>
+    <span class="petal"></span>
+    <span class="petal"></span>
+    <span class="petal"></span>
+    <span class="petal"></span>
+    <span class="petal"></span>
+</div>
 
-/* Envelope */
-.envelope-wrapper {
-    cursor: pointer;
-    position: relative;
-}
+<!-- ENVELOPE SCREEN -->
+<div class="screen envelope-screen" id="envelopeScreen">
+    <div class="envelope-container">
+        <p class="top-text">You're cordially invited</p>
+        <div class="envelope" id="envelope" onclick="openEnvelope()">
+            <div class="envelope-back"></div>
+            <div class="envelope-letter">
+                <div class="seal">
+                    <span>A<br>&<br>M</span>
+                </div>
+            </div>
+            <div class="envelope-front"></div>
+            <div class="envelope-flap"></div>
+        </div>
+        <p class="click-hint">✨ Tap envelope to open ✨</p>
+    </div>
+</div>
 
-.envelope {
-    width: 350px;
-    height: 220px;
-    background: #f3e5d8; /* champagne */
-    position: relative;
-    border-radius: 6px;
-    transition: transform 1s ease;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
+<!-- INVITATION SCREEN -->
+<div class="screen invite-screen" id="inviteScreen">
+    <div class="invite-card">
+        <div class="ornament top">❦</div>
+        
+        <p class="overline">Together with their families</p>
+        
+        <h1 class="names">
+            <span>Aarav</span>
+            <span class="amp">&</span>
+            <span>Meera</span>
+        </h1>
+        
+        <div class="divider">
+            <span class="line"></span>
+            <span class="diamond">◆</span>
+            <span class="line"></span>
+        </div>
+        
+        <p class="request">request the honour of your presence<br>at the celebration of their marriage</p>
+        
+        <div class="date-block">
+            <div class="day">Saturday</div>
+            <div class="date-row">
+                <span class="month">February</span>
+                <span class="number">14</span>
+                <span class="year">2027</span>
+            </div>
+            <div class="time">at five o'clock in the evening</div>
+        </div>
+        
+        <div class="divider">
+            <span class="line"></span>
+            <span class="diamond">◆</span>
+            <span class="line"></span>
+        </div>
+        
+        <div class="venue">
+            <p class="venue-name">The Royal Palace Gardens</p>
+            <p class="venue-address">New Delhi, India</p>
+        </div>
+        
+        <div class="rsvp-block">
+            <p>Reception to follow</p>
+            <p class="rsvp">Kindly RSVP by 1st January 2027</p>
+        </div>
+        
+        <div class="ornament bottom">❦</div>
+        
+        <button class="close-btn" onclick="closeInvite()">Close Invitation</button>
+    </div>
+</div>
 
-.flap {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #800020; /* burgundy */
-    clip-path: polygon(0 0, 50% 50%, 100% 0);
-    transform-origin: top;
-    transition: transform 1s ease;
-    border-radius: 6px 6px 0 0;
-}
-
-/* Letter */
-.letter {
-    position: absolute;
-    width: 90%;
-    height: 180%;
-    background: #fff0f5; /* pale pink */
-    top: 10%;
-    left: 5%;
-    border-radius: 6px;
-    transition: transform 1s ease;
-    transform: translateY(100%);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-
-.letter-content {
-    padding: 25px;
-}
-
-.names {
-    font-family: 'Great Vibes', cursive;
-    font-size: 36px;
-    color: #800020;
-}
-
-.invite-text {
-    margin-top: 10px;
-    font-size: 16px;
-    color: #5a3e36;
-}
-
-.details {
-    margin-top: 20px;
-    font-size: 15px;
-    color: #444;
-}
-
-.rsvp {
-    margin-top: 20px;
-    font-weight: bold;
-    color: #b8860b; /* champagne gold tone */
-}
-
-.click-text {
-    margin-top: 15px;
-    color: white;
-    font-size: 14px;
-}
-
-/* Open State */
-.envelope.open .flap {
-    transform: rotateX(180deg);
-}
-
-.envelope.open .letter {
-    transform: translateY(-40%);
-}
+<script src="script.js"></script>
+</body>
+</html>
