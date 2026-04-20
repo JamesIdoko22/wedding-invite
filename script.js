@@ -1,28 +1,27 @@
-function openEnvelope() {
+document.addEventListener("DOMContentLoaded", function () {
 
     const envelope = document.getElementById("luxEnvelope");
     const envelopeScreen = document.getElementById("envelopeScreen");
     const inviteScreen = document.getElementById("inviteScreen");
 
-    if (!envelope) return;
+    if (!envelope) {
+        console.log("Envelope NOT found ❌");
+        return;
+    }
 
-    envelope.classList.add("open");
+    console.log("Envelope found ✅");
 
-    setTimeout(() => {
-        envelopeScreen.classList.add("hide");
-        inviteScreen.classList.add("show");
-    }, 2000);
-}
+    envelope.addEventListener("click", function () {
 
-function closeInvite() {
-    const envelope = document.getElementById("luxEnvelope");
-    const envelopeScreen = document.getElementById("envelopeScreen");
-    const inviteScreen = document.getElementById("inviteScreen");
+        console.log("Envelope clicked ✅");
 
-    inviteScreen.classList.remove("show");
+        envelope.classList.add("open");
 
-    setTimeout(() => {
-        envelope.classList.remove("open");
-        envelopeScreen.classList.remove("hide");
-    }, 800);
-}
+        setTimeout(() => {
+            envelopeScreen.classList.add("hide");
+            inviteScreen.classList.add("show");
+        }, 2000);
+
+    });
+
+});
