@@ -46,22 +46,28 @@ html, body {
         linear-gradient(135deg, #4a1320 0%, #6b1f2c 50%, #8b2c3d 100%);
 }
 
-/* Show / Hide */
+/* Hide invite by default */
 .invite-screen {
+    position: fixed;
+    inset: 0;
     opacity: 0;
     visibility: hidden;
-    overflow-y: auto;
-    padding: 40px 20px;
+    z-index: 1;
+    transition: opacity 1s ease;
 }
 
+/* Show invite */
 .invite-screen.show {
     opacity: 1;
     visibility: visible;
+    z-index: 20;
 }
 
+/* Hide envelope */
 .envelope-screen.hide {
     opacity: 0;
     visibility: hidden;
+    z-index: 1;
 }
 
 /* ===============================
